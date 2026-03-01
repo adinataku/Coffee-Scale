@@ -221,6 +221,8 @@ cutoutsLid =
 cutoutsBase =   
 [
     
+    [80.,40.55,0,0,2.1,yappCircle,0,yappCenter,yappCoordBox],
+    [65.,40.55,0,0,2.1,yappCircle,0,yappCenter,yappCoordBox]
 ];
 
 //-- back plane  -- origin is pcb[0,0,0]
@@ -309,16 +311,21 @@ snapJoins   =
 
 
 // this part is to include a base for the load sensor to be screwed on
+// it uses yappCoordBox as reference 0,0,0 and not the PCB.
+diff() 
+{
 translate([60.,34.2,0]){
 color("gray")
-cube([25,12.7,21]); }
-translate([80.,40.55,+12]){
-color("red")
-screw_hole("M5",l=20.7);}
-translate([65.,40.55,+12]){
-color("red")
-screw_hole("M5",l=20.7);}
+cube([25,12.7,21]);}
 
+translate([80.,40.55,10.3]){
+color("red")
+tag("remove") screw_hole("M5",l=22.1);}
+
+translate([65.,40.55,10.3]){
+color("red")
+tag("remove") screw_hole("M5",l=22.1);}
+}
 // this part is to model the load sensor to be screwed on
 /*
 %translate([85,47,21]){
