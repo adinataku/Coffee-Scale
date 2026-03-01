@@ -10,7 +10,8 @@ The main 4 components are :
   - Adalogger (has RTC though I am not using it, has SD card storage)
   - Feather ESP32S3  Reverse TFT
 
-None of these software has to be exact. The load cells can be upgrade to 1 kG. I also upload the calibration code, follow that if you set yours the first time.
+None of these software has to be exact. The load cells can be upgraded to other size. I also upload the calibration code, follow that if you set yours the first time.
 You can put as many loadcells as you want, and each has to has its own NAU7802. You can use that special connector to daisy chain them.
 The Adalogger is used because I want the ability to store settings but it can be easily expanded to store your data too. Maybe someday I will add this. I don't have a use for this data so I skip it right now.
 The ESP32S3 can be any model, this one is from Adafruit, I really like the platform and it has a built in buttons, and TFT display. It keeps your hardware cute and tiny. Like me!
+In theory the code is setup to trigger a relay and you can use this to cut off power to the espressor machine or pump driven pour-over machine. 
